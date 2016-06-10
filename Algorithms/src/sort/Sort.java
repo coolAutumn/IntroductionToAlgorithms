@@ -1,7 +1,4 @@
-package sort;
-
-import sun.awt.image.IntegerComponentRaster;
-import sun.text.normalizer.SymbolTable;
+package Sort;
 
 /**
  * Created by coolAutumn on 6/6/16.
@@ -50,6 +47,7 @@ public class Sort<T>{
         return arr;
     }
 
+    //归并排序还可以递归调用,此处不再给出方法
     public T[] mergeSort(T[] arr,boolean isAsc){
         //只支持String,整型数组
         if(!arr.getClass().equals(Integer[].class)&&!arr.getClass().equals(String[].class)){
