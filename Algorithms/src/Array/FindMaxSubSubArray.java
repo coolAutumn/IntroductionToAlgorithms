@@ -1,4 +1,4 @@
-package FindMaxSubSumArray;
+package Array;
 
 /**
  * Created by coolAutumn on 6/10/16.
@@ -30,6 +30,8 @@ public class FindMaxSubSubArray {
         }
     }
 
+    //计算cross的子数组是单独去计算的
+    //最大和的连续子数组不在mid左边,就在mid右边,要么就是穿过mid
     private ExchangeInfo findMaxSumCrossSubArray(int[] arr, int low, int mid, int high){
         int leftSum=-1;
         int sum=0;
