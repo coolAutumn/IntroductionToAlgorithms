@@ -17,7 +17,7 @@ public class SquareMatrixMultiplyRecursive {
         for(int i=0;i<arr1_rows;i++){
             for (int j=0;j<arr2_columns;j++){
                 for (int k=0;k<arr1_columns;k++){
-                    res[i][j]+=arr1[i][k]*arr2[j][k];
+                    res[i][j]+=arr1[i][k] * arr2[j][k];
                 }
             }
         }
