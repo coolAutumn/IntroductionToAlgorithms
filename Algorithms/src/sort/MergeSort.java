@@ -1,51 +1,8 @@
 package Sort;
-
 /**
  * Created by coolAutumn on 6/6/16.
  */
-public class Sort<T>{
-    public T[] insertionSort(T[] arr,boolean isAsc){
-        int length=arr.length;
-        if(arr.getClass().equals(String[].class)) {
-            for (int i = 1; i < length; i++) {
-                T t = arr[i];
-                if (isAsc) {
-                    int j = i - 1;
-                    for (; j >= 0&&((String) t).compareTo((String) arr[j]) < 0; j--) {
-                        arr[j + 1] = arr[j];
-                    }
-                    arr[j+1]=t;
-                }else {
-                    int j = i - 1;
-                    for (; j >= 0&&((String) t).compareTo((String) arr[j]) > 0; j--) {
-                        arr[j + 1] = arr[j];
-                    }
-                    arr[j+1]=t;
-                }
-            }
-        }else if(arr.getClass().equals(Integer[].class)){
-            for (int i = 1; i < length; i++) {
-                T t = arr[i];
-                if (isAsc) {
-                    int j = i - 1;
-                    for (; j >= 0&&((Integer) t)<((Integer) arr[j]); j--) {
-                        arr[j + 1] = arr[j];
-                    }
-                    arr[j+1]=t;
-                }else {
-                    int j = i - 1;
-                    for (; j >= 0&&((Integer) t)>((Integer) arr[j]); j--) {
-                        arr[j + 1] = arr[j];
-                    }
-                    arr[j+1]=t;
-                }
-            }
-        }else{
-            System.out.println("此排序只支持String,整型");
-            return null;
-        }
-        return arr;
-    }
+public class MergeSort<T>{
 
     //归并排序还可以递归调用,此处不再给出方法
     public T[] mergeSort(T[] arr,boolean isAsc){
@@ -264,4 +221,6 @@ public class Sort<T>{
             }
         }
     }
+
+
 }
