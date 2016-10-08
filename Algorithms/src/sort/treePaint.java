@@ -3,7 +3,12 @@ package Sort;
 /**
  * Created by coolAutumn on 6/19/16.
  */
+
+/**
+ * 未完成
+ */
 public class treePaint {
+
     //边进行深度遍历边打印出来
     public static void paintTree(int[] array){
         int level=0;
