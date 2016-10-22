@@ -7,18 +7,21 @@ public class FindMaxSubSubArray {
 
     //变量s,用于在递归运算中存储一些值
     ExchangeInfo left=new ExchangeInfo();
+    ExchangeInfo left1=new ExchangeInfo();
     ExchangeInfo right=new ExchangeInfo();
+    ExchangeInfo right1=new ExchangeInfo();
     ExchangeInfo cross=new ExchangeInfo();
 
-    public ExchangeInfo findMaxSubSumArray(int[] arr, int low, int high){
+    public ExchangeInfo findMaxSubSumArray(int[] arr, int low, int high,ExchangeInfo left1,ExchangeInfo right1){
         if(low==high){
             ExchangeInfo result=new ExchangeInfo();
             result.setValues(low,high,arr[low]);
             return result;
         }else{
             int mid=(high+low)/2;
-            left.setValues(findMaxSubSumArray(arr,low,mid));
-            right.setValues(findMaxSubSumArray(arr,mid+1,high));
+            //关于left,right,cross的调用好像有点问题,需要对每个对象加个副本
+            left.setValues(findMaxSubSumArray(arr,low,mid,this.left1,this.right1));
+            right.setValues(findMaxSubSumArray(arr,mid+1,high,this.left1,this.right1));
             cross.setValues(findMaxSumCrossSubArray(arr,low,mid,high));
             if(left.sum>=right.sum && left.sum>=cross.sum){
                 return left;
