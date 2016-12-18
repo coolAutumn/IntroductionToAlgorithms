@@ -1,6 +1,6 @@
-package Sort;
+package sort;
 
-import Sort.interfaces.IObjectSort;
+import sort.interfaces.IObjectSort;
 
 /**
  * Created by LeeAutumn on 10/8/16.

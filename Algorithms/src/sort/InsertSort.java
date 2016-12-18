@@ -1,6 +1,4 @@
-package Sort;
-
-import java.util.ArrayList;
+package sort;
 
 /**
  * Created by coolAutumn on 6/6/16.
