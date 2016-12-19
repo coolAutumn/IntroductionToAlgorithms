@@ -8,7 +8,7 @@ import java.util.Stack;
  */
 public class InfixToSuffix {
 
-    public static String transer(String infixExpress){
+    public static String[] transer(String infixExpress){
         StringBuilder stringBuilder = new StringBuilder("");
 
         Stack<String> stack = new Stack<String>();
@@ -24,7 +24,7 @@ public class InfixToSuffix {
                 topOfStack = stack.peek();
 
             if(t == 0){
-                stringBuilder.append(strs[i]);
+                stringBuilder.append(strs[i]+",");
             }else{
                 if(!stack.empty()){
 
@@ -37,7 +37,7 @@ public class InfixToSuffix {
                         while(!stack.empty() && lt(strs[i],stack.peek())){
 
                             if(!stack.peek().equals("(")) {
-                                stringBuilder.append(stack.pop());
+                                stringBuilder.append(stack.pop()+",");
                             }else{
                                 if(isRight){
                                     stack.pop();
@@ -66,10 +66,11 @@ public class InfixToSuffix {
 
         //pop all the left operators to the suffix expression
         while(!stack.empty()){
-            stringBuilder.append(stack.pop());
+            stringBuilder.append(stack.pop()+",");
         }
 
-        return stringBuilder.toString();
+        String res = stringBuilder.toString();
+        return res.substring(0,res.length()-1).split(",");
     }
 
 
