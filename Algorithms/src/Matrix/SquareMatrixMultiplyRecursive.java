@@ -1,4 +1,4 @@
-package Matrix;
+package matrix;
 
 /**
  * Created by coolAutumn on 6/10/16.

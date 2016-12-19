@@ -1,4 +1,4 @@
-package Sort;
+package sort;
 
 /**
  * Created by LeeAutumn on 10/10/16.
