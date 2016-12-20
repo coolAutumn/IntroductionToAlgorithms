@@ -81,7 +81,7 @@ public class InfixToSuffix {
      *         !0   the priority of the operator
      */
     private static int isOperator(String c){
-        if(c.length() == 1 && c.charAt(0) >= 40 && c.charAt(0) <= 47 ){
+        if(c.length() == 1 && c.charAt(0) >= 40 && c.charAt(0) <= 47 && c.charAt(0) != '.'){
             return 1;
         }
         return 0;
@@ -100,7 +100,7 @@ public class InfixToSuffix {
         char[] chars = expression.toCharArray();
 
         for(int i=0;i<chars.length;i++){
-            if(chars[i] < 48 ){
+            if(chars[i] < 48 && chars[i] != '.'){
                 if(offset != i) {
                     stringBuilder.append(expression.substring(offset, i));
                     stringBuilder.append(" ");

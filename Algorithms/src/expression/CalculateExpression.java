@@ -40,7 +40,7 @@ public class CalculateExpression {
      *         !0   the priority of the operator
      */
     private static int isOperator(String c){
-        if(c.length() == 1 && c.charAt(0) >= 40 && c.charAt(0) <= 47 ){
+        if(c.length() == 1 && c.charAt(0) >= 40 && c.charAt(0) <= 47 && c.charAt(0) !=  '.'){
             return 1;
         }
         return 0;
